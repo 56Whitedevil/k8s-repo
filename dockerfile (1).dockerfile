@@ -10,7 +10,9 @@ RUN a2enmod ssl && a2enmod headers && a2enmod rewrite && service apache2 restart
 
 WORKDIR /var/www/html/
 
-COPY . /var/www/html/
+RUN mv index.html indexold.html
+
+RUN echo "HEllO from Nilesh...." > index.html
 
 EXPOSE 80
 
