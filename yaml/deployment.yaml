@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nil   
+  namespace: default
+  labels:
+    app: nil
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nil
+  template:
+    metadata:
+      labels:
+        app: nil
+    spec:
+      containers:
+      - name: nilacr
+        image: nilacr.azurecr.io/web-image:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nil-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: nil
+  ports:
+  - port: 80
+    targetPort: 80
