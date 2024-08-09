@@ -12,7 +12,7 @@ WORKDIR /var/www/html/
 
 RUN mv index.html indexold.html
 
-COPY ./k8s-website/ /var/www/html/
+COPY ./k8s-website/index.html /var/www/html/
 
 EXPOSE 80
 
